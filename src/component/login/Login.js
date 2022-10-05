@@ -28,11 +28,11 @@ export default function Header() {
       ...formError,
       ...(userCredential.username === "" &&
         formError.usernameError === "" && {
-          usernameError: "Username field is required",
+          usernameError: "Field is required",
         }),
       ...(userCredential.password === "" &&
         formError.passwordError === "" && {
-          passwordError: "Password field is required",
+          passwordError: "Field is required",
         }),
     };
 

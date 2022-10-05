@@ -13,11 +13,10 @@ const articles = createSlice({
       const values = action.payload;
       let array = [];
       values?.articlesArray?.filter((val) => {
-        if (values.filterArticles === "" || values.filterArticles === null) {
+        if (values.filterArticles === "") {
           state.filter = state.articles;
           return values.articlesArray;
-        }
-        if (
+        } else if (
           val?.byline?.original
             ?.toLowerCase()
             .includes(values.filterArticles.toLocaleLowerCase()) ||
@@ -27,7 +26,7 @@ const articles = createSlice({
         ) {
           array.push(val);
           state.filter = array;
-        } else state.filter = [];
+        } else state.filter = array;
       });
     },
     loadMoreArticles(state, action) {

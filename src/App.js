@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { ThemeProvider } from "@mui/material/styles";
+import { appTheme } from "./theme/muiTheme";
+import { useDispatch } from "react-redux";
+import { alertAction } from "./store/Alert";
+//components import
+import Routes from "./core/routes/Routes";
+import AlertMessage from "./layout/alert/Alert";
 
+import "./App.scss";
 function App() {
+  const dispatch = useDispatch();
+  const showAlert = useSelector((state) => state.alert);
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(
+        alertAction.show({
+          visible: false,
+          text: "",
+          type: "",
+        })
+      );
+    }, 5000);
+  }, [showAlert]);
+  console.log(showAlert, "sldkfnlksjdf");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={appTheme}>
+      <Routes />
+      {showAlert.alertVisible && (
+        <AlertMessage text={showAlert.text} type={showAlert.type} />
+      )}
+    </ThemeProvider>
   );
 }
 

@@ -1,0 +1,22 @@
+$primary-color: #2e424d;
+$secondry-color: #5b8291;
+$third-color: #eaebed;
+$box-background: #98dad9;
+$warning-color: red;
+:export {
+  primaryColor: $primary-color;
+  secondaryColor: $secondry-color;
+  thirdColor: $third-color;
+  warningColor: $warning-color;
+  //   inputColor: $input-colors;
+  //   labelColor: $label-color;
+  //   whiteColor: $white;
+  //   darkWhiteColor: $darkwhite;
+  //   lightInputColor: $light-input-color;
+  //   bodyColor: $body-color;
+  //   redColor: $red-color;
+  //   lightRedColor: $light-red;
+  //   offWhiteColor: $off-white;
+  //   yellowColor: $yellow;
+  //   calendarWeekendColor: $calendar-weekend;
+}

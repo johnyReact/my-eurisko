@@ -1,0 +1,17 @@
+@import "/src/theme/colors.scss";
+@import "/src/theme/variables.scss";
+.dashboard-container {
+  padding: 1px;
+  @media only screen and (max-width: $mobile-screen-width) {
+    width: 100%;
+    margin: 0 auto;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  .articles-box {
+    height: 75vh;
+    overflow-y: overlay;
+    padding: 5px;
+  }
+}

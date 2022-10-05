@@ -12,28 +12,4 @@ export const appTheme = createTheme({
       main: palette.primaryColor,
     },
   },
-  MUITextField: {
-    styleOverrides: {
-      root: {
-        backgroundColor: palette.whiteColor,
-        borderRadius: "5px",
-        "& .MuiOutlinedInput-root": {
-          "&:hover fieldset": {
-            border: `1px solid  ${palette.primaryColor}`,
-          },
-        },
-
-        fieldset: {
-          border: `1px solid  ${palette.inputColor}`,
-        },
-
-        input: {
-          "&::placeholder": {
-            color: palette.primaryColor,
-            opacity: "1",
-          },
-        },
-      },
-    },
-  },
 });

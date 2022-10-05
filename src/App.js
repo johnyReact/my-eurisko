@@ -23,7 +23,6 @@ function App() {
       );
     }, 5000);
   }, [showAlert]);
-  console.log(showAlert, "sldkfnlksjdf");
   return (
     <ThemeProvider theme={appTheme}>
       <Routes />
